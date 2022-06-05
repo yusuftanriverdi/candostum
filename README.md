@@ -12,7 +12,7 @@
 
 -Furkan Avcu: Developer
 
--Yusuf Beyaz: Developer
+-Yusuf Tanrıverdi: Developer
 
 -Ayşegül Eyrice: Developer
 

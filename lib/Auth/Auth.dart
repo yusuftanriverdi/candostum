@@ -3,7 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-abstract class AuthService{
+class AuthService{
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -15,8 +15,8 @@ abstract class AuthService{
     return await _auth.signOut();
   }// "Çıkış yap fonksiyonu"
 
-Future<User?> createPerson(String name, String email, int phonenumb, String password) async{
-    var user = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+Future<User?> createPerson(String name, String email, String phonenumb, String password) async{
+    var user = await _auth.signInWithEmailAndPassword(email: email, password: password);
 
     await _firestore
     .collection("Person")

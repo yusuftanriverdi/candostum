@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Android Project\\AkademiFlutter56\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
+            "outputFile": "C:\\src\\projects\\flutter_app\\AkademiFlutter56\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rIN\\values-en-rIN.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Nailcan\\.gradle\\caches\\transforms-2\\files-2.1\\fde8609a472e356a74bbb4f40cd78ee0\\core-1.6.0\\res\\values-en-rIN\\values-en-rIN.xml",
+                    "source": "C:\\Users\\Elifnaz\\.gradle\\caches\\transforms-2\\files-2.1\\fde8609a472e356a74bbb4f40cd78ee0\\core-1.6.0\\res\\values-en-rIN\\values-en-rIN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

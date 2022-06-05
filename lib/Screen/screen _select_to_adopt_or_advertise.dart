@@ -32,6 +32,7 @@ class ReadySelectionScreenState extends State<ReadySelectionScreen> {
   // the opacity
   double _opacity = 0;
 
+
   @override
   void initState() {
     _opacity = _opacity == 0 ? 1 : 0;

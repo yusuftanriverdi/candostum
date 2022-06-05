@@ -1,24 +1,33 @@
 // ignore_for_file: deprecated_member_use, unused_local_variable, use_key_in_widget_constructors, must_be_immutable, non_constant_identifier_names, prefer_const_constructors, avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:untitled/Auth/Auth.dart';
 import 'package:untitled/Screen/Register.dart';
 
 import 'screen _select_to_adopt_or_advertise.dart';
 
+class LoginHome extends StatefulWidget {
+  @override
+  State<LoginHome> createState() => _LoginHomeState();
+}
 
-class LoginHome extends StatelessWidget {
-  late String username;
-  late String password;
+class _LoginHomeState extends State<LoginHome> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  AuthService _authService = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return _LoginHome(context);
   }
-}
+
 Widget _LoginHome (BuildContext context)
 {
   final emailField = TextFormField(
-    obscureText: false, //yazilani gosterir
+    controller: _emailController,
+   obscureText: false,//yazilani gosterir
     decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         labelText: "User Email",
@@ -40,6 +49,7 @@ Widget _LoginHome (BuildContext context)
   );
   SizedBox(height: 4.0);
   final passwordField = TextFormField(
+    controller: _passwordController,
     obscureText: true, // yazilani gostermez
     decoration: InputDecoration(
         contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -67,11 +77,14 @@ Widget _LoginHome (BuildContext context)
           .size
           .width,
       padding: EdgeInsets.fromLTRB(20.0, 10.0, 10.0, 15.0),
-      onPressed: () {  Navigator.push(context,
+      onPressed: () {
+        _authService.sigin(_nameController.text, _emailController.text, _passwordController.text).then((value){
+
+        Navigator.push(context,
           MaterialPageRoute(
-          builder: (context) =>SelectionScreen()
-          )
-      );
+          builder: (context) =>SelectionScreen()));
+
+        });
       },
       child: Text("Login",
         textAlign: TextAlign.center,
@@ -137,6 +150,7 @@ Widget _LoginHome (BuildContext context)
       ),
     ),
   );
+}
 }
 
 
